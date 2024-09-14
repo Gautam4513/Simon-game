@@ -7,9 +7,11 @@ let highScore=0;
 
 let h3 = document.querySelector("h3");
 
+let start=document.querySelector(".start");
+
 let btns = document.querySelectorAll(".btn");
 
-document.addEventListener("keypress",function(){
+start.addEventListener("click",function(){
     if(started==false){
         started=true;
         levelUp();
@@ -55,7 +57,8 @@ function checkAns(idx){
         if(level>highScore){
             highScore=level;
         }
-        h3.innerHTML=`Game Over!,<br> Your scoreis <b>${level}<b> <br> High Score is ${highScore} <br> press any key to start`;
+        h3.innerHTML=`Game Over!,<br> Your scoreis <b>${level}<b> <br> High Score is ${highScore} <br>`;
+        h3.append(start);
         gameOver();
         started=false;
         gameSequance=[];
